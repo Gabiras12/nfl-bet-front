@@ -1,13 +1,70 @@
-{{!-- {{#each model as |champ|}}
-  <p>{{champ.championshipNumber}}</p>
-  {{#each champ.teams as |team|}}
-    <p>{{team.name}}</p>
-  {{/each}}
-{{/each}} --}}
-<p>{{model.stadium}}</p>
-<p>{{model.scoreDiference}}</p>
-<p>{{model.matchDate}}</p>
-<p>{{model.round.betLimitDate}}</p>
-<p>{{model.homeTeam.name}}</p>
-<p>{{model.winner.name}}</p>
-<p>{{model.visitingTeam.name}}</p>
+<!-- Navigation -->
+<nav class="navbar navbar-custom navbar-fixed-top" role="navigation">
+    <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-main-collapse">
+                Menu <i class="fa fa-bars"></i>
+            </button>
+            <a class="navbar-brand page-scroll" href="#page-top">
+                <i class="fa fa-play-circle"></i> <span class="light">NFL</span> Bet
+            </a>
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse navbar-right navbar-main-collapse">
+            <ul class="nav navbar-nav">
+                <!-- Hidden li included to remove active class from about link when scrolled up past about section -->
+                <li class="hidden">
+                    <a href="#page-top"></a>
+                </li>
+                <li>
+
+                </li>
+                <li>
+
+                </li>
+                <li>
+                    <a class="page-scroll" href="#rodada" class="subline">Jogar rodada Atual!</a>
+                </li>
+            </ul>
+        </div>
+        <!-- /.navbar-collapse -->
+    </div>
+    <!-- /.container -->
+</nav>
+
+<!-- Intro Header -->
+<header class="intro">
+    <div class="intro-body">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-8 col-md-offset-2">
+                    <h1 class="brand-heading"> o melhor game play de apostas NFL</h1>
+                    <p class="intro-text"></p>
+                    {{!-- <a href="#about" class="btn btn-circle page-scroll">
+                        <i class="fa fa-angle-double-down animated"></i>
+                    </a> --}}
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+<!-- About Section -->
+<section id="rodada" class="container content-section text-center">
+    <div class="row">
+        <div class="col-xs-12 col-lg-12">
+          {{#each model as |game|}}
+            {{bet-row game=game bet=(route-action 'bet')}}
+          {{/each}}
+        </div>
+    </div>
+</section>
+
+
+<!-- Footer -->
+<footer>
+    <div class="container text-center">
+        <p>Paradigmas de Programação 1.2017</p>
+    </div>
+</footer>
