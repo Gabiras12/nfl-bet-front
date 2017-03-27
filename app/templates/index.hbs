@@ -53,8 +53,11 @@
 <!-- About Section -->
 <section id="rodada" class="container content-section text-center">
     <div class="row">
+      <h1>Esse é o campeonato numero {{model.champ.championshipNumber}} do ano de {{ model.champ.championshipYear}}</h1>
+    </div>
+    <div class="row">
         <div class="col-xs-12 col-lg-12">
-          {{#each model as |game|}}
+          {{#each model.game as |game|}}
             {{bet-row game=game bet=(route-action 'bet')}}
           {{/each}}
         </div>

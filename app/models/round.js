@@ -5,5 +5,6 @@ export default DS.Model.extend({
   endDate: DS.attr('date'),
   startDate: DS.attr('date'),
   championship: DS.belongsTo('championship'),
-  games: DS.hasMany('game')
+  games: DS.hasMany('game'),
+  roundHasBeenFineshed: DS.attr('boolean')
 });

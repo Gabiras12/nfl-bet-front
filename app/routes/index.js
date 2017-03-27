@@ -2,7 +2,10 @@ import Ember from 'ember';
 
 export default Ember.Route.extend({
   model() {
-    return this.store.findAll('game');
+    return {
+      game: this.store.findAll('game'),
+      champ: this.store.findRecord('championship', 1)
+    };
   },
 
   actions: {

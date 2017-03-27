@@ -6,7 +6,7 @@ export default DS.Model.extend({
   type: DS.attr('number'),
   user: DS.belongsTo('user'),
   points: DS.attr('number'),
-  right: DS.attr('boolean'),
+  hit: DS.attr('boolean'),
   hasBeenComputed: DS.attr('boolean'),
 
 

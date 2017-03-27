@@ -1,16 +1,26 @@
 <div class="row bet-row" data-toggle="collapse" data-target="#demo-{{elementId}}">
   <div class="col-xs-12 col-lg-4">
-    <img src={{game.visitingTeam.image}} class="team-image"> <br>
+    <img src={{game.visitingTeam.image}} class="team-image {{if (eq betingTeam game.visitingTeam) 'cool-border'}}"> <br>
     {{game.visitingTeam.name}}
   </div>
   <div class="col-xs-12 col-lg-4" style="text-align: center; margin-top: 32px; font-size: 30px;">
     @
   </div>
   <div class="col-xs-12 col-lg-4">
-    <img src={{game.homeTeam.image}} class="team-image"> <br>
+    <img src={{game.homeTeam.image}} class="team-image {{if (eq betingTeam game.homeTeam) 'cool-border'}}"> <br>
     {{game.homeTeam.name}}
   </div>
 </div>
+
+{{#if game.round.roundHasBeenFineshed}}
+  <div class="row" class="text-align: center">
+    {{#each game.bets as |bet|}}
+      Você fez {{bet.points}} pontos nessa partida! <br>
+      Você {{bet-status bet.hit}} essa partida!
+    {{/each}}
+  </div>
+{{/if}}
+
 <div class="row collapse" id="demo-{{elementId}}">
   <form>
     <div class="form-group">

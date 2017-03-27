@@ -11,6 +11,7 @@ export default Ember.Component.extend({
 
     sendBet() {
       this.sendAction('bet', this.get('betingTeam'), this.get('selectedType'), this.get('game'));
+      this.$('.collapse').collapse('hide');
     }
 
   }
